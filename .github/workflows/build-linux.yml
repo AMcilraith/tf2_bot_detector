@@ -1,25 +1,12 @@
 name: build-linux
 
 on:
-  workflow_dispatch:
-    inputs:
-      logLevel:
-        description: 'Log level'
-        required: true
-        default: 'warning'
-        type: choice
-        options:
-        - info
-        - warning
-        - debug
-      tags:
-        description: 'Test scenario tags'
-        required: false
-        type: boolean
-      environment:
-        description: 'Environment to run tests against'
-        type: environment
-        required: true
+  push:
+    paths-ignore:
+      - 'schemas/**.json'
+      - 'staging/cfg/**.json'
+      - '*.md'
+      - '*.appinstaller_template'
 
 env:
   VCPKG_ROOT: ${{ github.workspace }}/submodules/vcpkg
