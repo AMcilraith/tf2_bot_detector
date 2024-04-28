@@ -8,6 +8,9 @@ on:
       - '*.md'
       - '*.appinstaller_template'
 
+
+      
+
 env:
   VCPKG_ROOT: ${{ github.workspace }}/submodules/vcpkg
   VCPKG_BINARY_SOURCES: 'clear;nuget,GitHub,readwrite'
